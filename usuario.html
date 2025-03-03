@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand ms-3" href="#">Panel de Administración</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link px-3" href="./paginaInicio.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="./usuarios.html">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="./publicaciones.html">Publicaciones</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="my-2 mx-2">
+            <h2>Perfil de Usuario</h2>
+            <div id="user-info">
+            </div>
+
+            <h3>Publicaciones</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Contenido</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tr1">
+                        <td>1</td>
+                        <td>Formato JPEG (JPG)</td>
+                        <td>
+                            <p><strong>JPEG (JPG)</strong> es uno de los formatos de imagen más comunes en la web. Ideal
+                                para fotografías y gradientes suaves debido a su compresión con pérdida, lo que reduce
+                                el tamaño del archivo sin perder demasiada calidad visual.</p>
+                            <ul>
+                                <li><strong>Usos:</strong> Fotografías, imágenes de productos, gráficos complejos.</li>
+                                <li><strong>Ventajas:</strong> Alta compresión, tamaño de archivo pequeño.</li>
+                                <li><strong>Desventajas:</strong> No admite transparencia, pérdida de calidad por
+                                    compresión.</li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus1">
+                            Activo
+                        </td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(1)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal1" ">Ver</button>
+                        </td>
+                    </tr>
+                    <tr id=" tr2">
+                        <td>2</td>
+                        <td>Propiedades de Fondo en CSS</td>
+                        <td>
+                            <p>En CSS, <strong>background-image</strong> permite establecer una imagen de fondo. A
+                                continuación, algunas propiedades asociadas:</p>
+                            <ul>
+                                <li><strong>background-position:</strong> Define la posición de la imagen de fondo.</li>
+                                <li><strong>background-size:</strong> Controla el tamaño de la imagen (usando valores
+                                    como <code>cover</code> o <code>contain</code>).</li>
+                                <li><strong>background-attachment:</strong> Define si la imagen se desplaza con el
+                                    contenido o se mantiene fija (<code>fixed</code>).</li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus2">
+                            Activo
+                        </td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(2)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal2" ">Ver</button>
+                        </td>
+                    </tr>
+                    <tr id=" tr3">
+                        <td>3</td>
+                        <td>Filtros CSS para Imágenes</td>
+                        <td>
+                            <p>Los filtros en CSS permiten cambiar aspectos visuales de las imágenes como brillo,
+                                saturación y más.</p>
+                            <ul>
+                                <li><strong>brightness:</strong> Ajusta el brillo de una imagen.</li>
+                                <li><strong>saturate:</strong> Cambia la saturación de los colores.</li>
+                                <li><strong>sepia:</strong> Aplica un filtro sepia a la imagen.</li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus3">
+                            Activo
+                        </td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(3)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal3" ">Ver</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class=" modal fade" id="viewUserModal1" tabindex="-1" aria-labelledby="viewUserModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Cerrar"></button>
+                                        </div>
+                                        <div class="modal-body d-flex">
+                                            <div class="w-50">
+                                                <img src="images.png" height="100vh" width="100%" alt=""
+                                                    class="img-fluid">
+                                            </div>
+                                            <div class="w-50 ps-3">
+                                                <h4 id="modal-post-title">Formato JPEG (JPG)</h4>
+                                                <p id="modal-post-content">
+                                                <p><strong>JPEG (JPG)</strong> es uno de los formatos de imagen más
+                                                    comunes en la web. Ideal
+                                                    para fotografías y gradientes suaves debido a su compresión con
+                                                    pérdida, lo que reduce
+                                                    el tamaño del archivo sin perder demasiada calidad visual.</p>
+                                                <ul>
+                                                    <li><strong>Usos:</strong> Fotografías, imágenes de productos,
+                                                        gráficos complejos.</li>
+                                                    <li><strong>Ventajas:</strong> Alta compresión, tamaño de archivo
+                                                        pequeño.</li>
+                                                    <li><strong>Desventajas:</strong> No admite transparencia, pérdida
+                                                        de calidad por
+                                                        compresión.</li>
+                                                </ul>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-between w-100">
+                                            <p><strong>Fecha: </strong>03-11-2024</p>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+        </div>
+
+        <div class="modal fade" id="viewUserModal2" tabindex="-1" aria-labelledby="viewUserModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body d-flex">
+                        <div class="w-50">
+                            <img src="descarga.png" height="100vh" width="100%" alt="" class="img-fluid">
+                        </div>
+                        <div class="w-50 ps-3">
+                            <h4 id="modal-post-title">Propiedades de Fondo en CSS</h4>
+                            <p id="modal-post-content">
+                            <p>En CSS, <strong>background-image</strong> permite establecer una imagen de fondo. A
+                                continuación, algunas propiedades asociadas:</p>
+                            <ul>
+                                <li><strong>background-position:</strong> Define la posición de la imagen de fondo.</li>
+                                <li><strong>background-size:</strong> Controla el tamaño de la imagen (usando valores
+                                    como <code>cover</code> o <code>contain</code>).</li>
+                                <li><strong>background-attachment:</strong> Define si la imagen se desplaza con el
+                                    contenido o se mantiene fija (<code>fixed</code>).</li>
+                            </ul>
+                            <p>Ejemplo:</p>
+                            <pre><code>
+    .element {
+        background-image: url('image.jpg');
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</code></pre>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between w-100r">
+                        <p><strong>Fecha: </strong>10-04-2024</p>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="viewUserModal3" tabindex="-1" aria-labelledby="viewUserModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body d-flex">
+                        <div class="w-50">
+                            <img src="efectos_de_imagenes.png" height="100vh" width="100%" alt=""
+                                class="img-fluid">
+                        </div>
+                        <div class="w-50 ps-3">
+                            <h4 id="modal-post-title">Filtros CSS para Imágenes</h4>
+                            <p id="modal-post-content">
+                            <p>Los filtros en CSS permiten cambiar aspectos visuales de las imágenes como brillo,
+                                saturación y más.</p>
+                            <ul>
+                                <li><strong>brightness:</strong> Ajusta el brillo de una imagen.</li>
+                                <li><strong>saturate:</strong> Cambia la saturación de los colores.</li>
+                                <li><strong>sepia:</strong> Aplica un filtro sepia a la imagen.</li>
+                            </ul>
+                            <p>Ejemplo de uso:</p>
+                            <pre><code>
+    img {
+        filter: brightness(0.8);
+    }
+    </code></pre>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between w-100">
+                        <p class="text-start"><strong>Fecha: </strong>18-12-2024</p>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <footer class="footer mt-4">
+                <p>&copy; 2025 Red Social - Todos los derechos reservados</p>
+            </footer>            
+        </div>
+        <script src="usuario.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

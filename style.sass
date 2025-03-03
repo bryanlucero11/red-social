@@ -1,0 +1,52 @@
+@import "./node_modules/bootstrap/scss/bootstrap"
+@import "https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+
+$primary-color: #015dc0
+$light-gray: #b6c4d3
+$dark-gray: #343a40
+$blocked-color: #000000
+$main-font: "Oswald", sans-serif
+
+$button-colors: (borrar: #dc3545, visualizar: #17a2b8, ver: #28a745, bloquear: #343a40, editar: #ffc107, añadir-usuario: #007bff)
+
+@each $btn, $color in $button-colors
+    .btn-#{$btn}
+        background-color: map-get($button-colors, $btn)
+        color: white
+        border: none
+        padding: 8px 16px
+        border-radius: 5px
+        font-weight: bold
+        transition: background-color 0.3s ease-in-out
+
+        &:hover
+            background-color: darken(map-get($button-colors, $btn), 15%)
+
+
+body
+    font-family: $main-font
+    background-color: $light-gray
+    color: $dark-gray
+
+.navbar
+    background-color: $primary-color !important
+    .navbar-brand, .nav-link
+        color: white !important
+
+.card
+    border-radius: 10px
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+
+.footer
+    background-color: $dark-gray
+    color: white
+    text-align: center
+    padding: 15px 0
+    position: relative
+    bottom: 0
+    width: 100%
+
+$light-blocked-color: lighten($blocked-color, 40%)
+
+.user-blocked td
+    color: $light-blocked-color

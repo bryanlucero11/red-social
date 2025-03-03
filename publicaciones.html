@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand ms-3" href="./paginaInicio.html">Panel de Administración</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link px-3" href="./paginaInicio.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="./usuarios.html">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="./publicaciones.html">Publicaciones</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="my-2 mx-2">
+            <h2>Gestión de Publicaciones</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Título</th>
+                        <th>Contenido</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tr1">
+                        <td>03-11-2023</td>
+                        <td>Formato JPEG (JPG)</td>
+                        <td>
+                            <p><strong>JPEG (JPG)</strong> es uno de los formatos de imagen más comunes en la web. Ideal
+                                para fotografías y gradientes suaves debido a su compresión con pérdida, lo que reduce
+                                el tamaño del archivo sin perder demasiada calidad visual.</p>
+                            <ul>
+                                <li><strong>Usos:</strong> Fotografías, imágenes de productos, gráficos complejos.</li>
+                                <li><strong>Ventajas:</strong> Alta compresión, tamaño de archivo pequeño.</li>
+                                <li><strong>Desventajas:</strong> No admite transparencia, pérdida de calidad por
+                                    compresión.</li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus1">Activo</td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(1)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal1"
+                                onclick="viewPost(1)">Ver</button>
+                        </td>
+                    </tr>
+                    <tr id="tr2">
+                        <td>12-01-2024</td>
+                        <td>Formato PNG</td>
+                        <td>
+                            <p><strong>PNG</strong> es un formato sin pérdida de calidad que admite transparencia. Ideal
+                                para gráficos, logotipos e imágenes con un fondo transparente.</p>
+                            <ul>
+                                <li><strong>Usos:</strong> Logotipos, iconos, gráficos, imágenes con transparencia.</li>
+                                <li><strong>Ventajas:</strong> Soporta transparencia, sin pérdida de calidad.</li>
+                                <li><strong>Desventajas:</strong> Archivos más grandes comparados con otros formatos
+                                    como JPEG.</li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus2">Activo</td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(2)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal2"
+                                onclick="viewPost(2)">Ver</button>
+                        </td>
+                    </tr>
+                    <tr id="tr3">
+                        <td>20-02-2024</td>
+                        <td>Formato WebP</td>
+                        <td>
+                            <p><strong>WebP</strong> es un formato moderno desarrollado por Google, que ofrece
+                                compresión eficiente tanto con pérdida como sin pérdida, y es más eficiente que JPEG y
+                                PNG. Soporta transparencia y animación.</p>
+                            <ul>
+                                <li><strong>Usos:</strong> Imágenes web, gráficos, fotografías, animaciones.</li>
+                                <li><strong>Ventajas:</strong> Alta compresión, soporte de transparencia y animaciones.
+                                </li>
+                                <li><strong>Desventajas:</strong> No es compatible con todos los navegadores.</li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus3">Activo</td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(3)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal3"
+                                onclick="viewPost(3)">Ver</button>
+                        </td>
+                    </tr>
+                    <tr id="tr4">
+                        <td>30-03-2024</td>
+                        <td>Formato AVIF</td>
+                        <td>
+                            <p><strong>AVIF</strong> es un formato de imagen de nueva generación que utiliza el códec
+                                AV1. Ofrece una compresión superior a WebP, lo que permite imágenes de alta calidad a un
+                                tamaño de archivo más pequeño.</p>
+                            <ul>
+                                <li><strong>Usos:</strong> Fotografías de alta calidad, imágenes web.</li>
+                                <li><strong>Ventajas:</strong> Mejor compresión que WebP y JPEG, calidad superior.</li>
+                                <li><strong>Desventajas:</strong> Soporte limitado en algunos navegadores.</li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus4">Activo</td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(4)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal4"
+                                onclick="viewPost(4)">Ver</button>
+                        </td>
+                    </tr>
+                    <tr id="tr5">
+                        <td>18-06-2024</td>
+                        <td>Formato SVG</td>
+                        <td>
+                            <p><strong>SVG</strong> es un formato de gráficos vectoriales basado en XML. A diferencia de
+                                los formatos rasterizados como JPEG y PNG, SVG es independiente de la resolución, lo que
+                                significa que no pierde calidad al ser escalado.</p>
+                            <ul>
+                                <li><strong>Usos:</strong> Logotipos, iconos, gráficos vectoriales.</li>
+                                <li><strong>Ventajas:</strong> Escalable sin pérdida de calidad, tamaño de archivo
+                                    pequeño, manipulable con CSS y JavaScript.</li>
+                                <li><strong>Desventajas:</strong> No es adecuado para imágenes fotográficas.</li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus5">Activo</td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(5)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal5"
+                                onclick="viewPost(5)">Ver</button>
+                        </td>
+                    </tr>
+                    <tr id="tr6">
+                        <td>10-09-2024</td>
+                        <td>Propiedades de Fondo en CSS</td>
+                        <td>
+                            <p>En CSS, <strong>background-image</strong> permite establecer una imagen de fondo. A
+                                continuación, algunas propiedades asociadas:</p>
+                            <ul>
+                                <li><strong>background-position:</strong> Define la posición de la imagen de fondo.</li>
+                                <li><strong>background-size:</strong> Controla el tamaño de la imagen (usando valores
+                                    como <code>cover</code> o <code>contain</code>).</li>
+                                <li><strong>background-attachment:</strong> Define si la imagen se desplaza con el
+                                    contenido o se mantiene fija (<code>fixed</code>).</li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus6">Activo</td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(6)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal6"
+                                onclick="viewPost(6)">Ver</button>
+                        </td>
+                    </tr>
+                    <tr id="tr7">
+                        <td>31-10-2024</td>
+                        <td>Objetos en CSS: Controlando Imágenes con object</td>
+                        <td>
+                            <p>Las propiedades CSS <code>object-fit</code>, <code>object-position</code>, y
+                                <code>object-view-port</code> nos permiten controlar cómo se visualizan las imágenes
+                                dentro de un contenedor, especialmente en la etiqueta <code>&lt;img&gt;</code>:
+                            </p>
+                            <ul>
+                                <li><strong>object-fit:</strong> Controla cómo se ajusta la imagen dentro del contenedor
+                                    (ej. <code>cover</code>, <code>contain</code>).</li>
+                                <li><strong>object-position:</strong> Define la posición de la imagen dentro del
+                                    contenedor.</li>
+                                <li><strong>object-view-port:</strong> Establece el área visible dentro del contenedor
+                                    (específico para elementos de tipo <code>object</code>, no para imágenes). </li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus7">Activo</td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(7)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal7"
+                                onclick="viewPost(7)">Ver</button>
+                        </td>
+                    </tr>
+                    <tr id="tr8">
+                        <td>18-12-2024</td>
+                        <td>Filtros CSS para Imágenes</td>
+                        <td>
+                            <p>Los filtros en CSS permiten cambiar aspectos visuales de las imágenes como brillo,
+                                saturación y más.</p>
+                            <ul>
+                                <li><strong>brightness:</strong> Ajusta el brillo de una imagen.</li>
+                                <li><strong>saturate:</strong> Cambia la saturación de los colores.</li>
+                                <li><strong>sepia:</strong> Aplica un filtro sepia a la imagen.</li>
+                            </ul>
+                        </td>
+                        <td id="PostStatus8">Activo</td>
+                        <td>
+                            <button class="btn btn-bloquear btn-sm" onclick="blockPost(8)">Bloquear</button>
+                            <button class="btn btn-ver btn-sm" data-bs-toggle="modal" data-bs-target="#viewUserModal8"
+                                onclick="viewPost(8)">Ver</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <footer class="footer mt-4">
+                <p>&copy; 2025 Red Social - Todos los derechos reservados</p>
+            </footer>            
+        </div>
+    </div>
+
+    <div class=" modal fade" id="viewUserModal1" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <div class="w-50">
+                        <img src="images.png" height="100vh" width="100%" alt=""
+                            class="img-fluid">
+                    </div>
+                    <div class="w-50 ps-3">
+                        <h4 id="modal-post-title">Formato JPEG (JPG)</h4>
+                        <p id="modal-post-content">
+                        <p><strong>JPEG (JPG)</strong> es uno de los formatos de imagen más
+                            comunes en la web. Ideal
+                            para fotografías y gradientes suaves debido a su compresión con
+                            pérdida, lo que reduce
+                            el tamaño del archivo sin perder demasiada calidad visual.</p>
+                        <ul>
+                            <li><strong>Usos:</strong> Fotografías, imágenes de productos,
+                                gráficos complejos.</li>
+                            <li><strong>Ventajas:</strong> Alta compresión, tamaño de archivo
+                                pequeño.</li>
+                            <li><strong>Desventajas:</strong> No admite transparencia, pérdida
+                                de calidad por
+                                compresión.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-between w-100">
+                    <p><strong>Fecha: </strong>03-11-2023</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" modal fade" id="viewUserModal2" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <div class="w-50">
+                        <img src="formatopng.jpeg" height="100vh" width="100%" alt=""
+                            class="img-fluid">
+                    </div>
+                    <div class="w-50 ps-3">
+                        <h4 id="modal-post-title">Formato PNG</h4>
+                        <p id="modal-post-content">
+                        <p><strong>PNG</strong> es un formato sin pérdida de calidad que admite transparencia. Ideal
+                            para gráficos, logotipos e imágenes con un fondo transparente.</p>
+                        <ul>
+                            <li><strong>Usos:</strong> Logotipos, iconos, gráficos, imágenes con transparencia.</li>
+                            <li><strong>Ventajas:</strong> Soporta transparencia, sin pérdida de calidad.</li>
+                            <li><strong>Desventajas:</strong> Archivos más grandes comparados con otros formatos
+                                como JPEG.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-between w-100">
+                    <p><strong>Fecha: </strong>12-01-2024</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" modal fade" id="viewUserModal3" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <div class="w-50">
+                        <img src="1706057357099.jpeg" height="100vh" width="100%" alt=""
+                            class="img-fluid">
+                    </div>
+                    <div class="w-50 ps-3">
+                        <h4 id="modal-post-title">Formato WebP</h4>
+                        <p id="modal-post-content">
+                        <p><strong>WebP</strong> es un formato moderno desarrollado por Google, que ofrece
+                            compresión eficiente tanto con pérdida como sin pérdida, y es más eficiente que JPEG y
+                            PNG. Soporta transparencia y animación.</p>
+                        <ul>
+                            <li><strong>Usos:</strong> Imágenes web, gráficos, fotografías, animaciones.</li>
+                            <li><strong>Ventajas:</strong> Alta compresión, soporte de transparencia y animaciones.
+                            </li>
+                            <li><strong>Desventajas:</strong> No es compatible con todos los navegadores.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-between w-100">
+                    <p><strong>Fecha: </strong>20-02-2024</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" modal fade" id="viewUserModal4" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <div class="w-50">
+                        <img src="images.jpeg" height="100vh" width="100%" alt=""
+                            class="img-fluid">
+                    </div>
+                    <div class="w-50 ps-3">
+                        <h4 id="modal-post-title">Formato AVIF</h4>
+                        <p id="modal-post-content">
+                        <p><strong>AVIF</strong> es un formato de imagen de nueva generación que utiliza el códec
+                            AV1. Ofrece una compresión superior a WebP, lo que permite imágenes de alta calidad a un
+                            tamaño de archivo más pequeño.</p>
+                        <ul>
+                            <li><strong>Usos:</strong> Fotografías de alta calidad, imágenes web.</li>
+                            <li><strong>Ventajas:</strong> Mejor compresión que WebP y JPEG, calidad superior.</li>
+                            <li><strong>Desventajas:</strong> Soporte limitado en algunos navegadores.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-between w-100">
+                    <p><strong>Fecha: </strong>30-03-2024</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" modal fade" id="viewUserModal5" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <div class="w-50">
+                        <img src="svg.jpeg" height="100vh" width="100%" alt=""
+                            class="img-fluid">
+                    </div>
+                    <div class="w-50 ps-3">
+                        <h4 id="modal-post-title">Formato SVG</h4>
+                        <p id="modal-post-content">
+                        <p><strong>SVG</strong> es un formato de gráficos vectoriales basado en XML. A diferencia de
+                            los formatos rasterizados como JPEG y PNG, SVG es independiente de la resolución, lo que
+                            significa que no pierde calidad al ser escalado.</p>
+                        <ul>
+                            <li><strong>Usos:</strong> Logotipos, iconos, gráficos vectoriales.</li>
+                            <li><strong>Ventajas:</strong> Escalable sin pérdida de calidad, tamaño de archivo
+                                pequeño, manipulable con CSS y JavaScript.</li>
+                            <li><strong>Desventajas:</strong> No es adecuado para imágenes fotográficas.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-between w-100">
+                    <p><strong>Fecha: </strong>18-06-2024</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="viewUserModal6" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <div class="w-50">
+                        <img src="descarga.png" height="100vh" width="100%" alt=""
+                            class="img-fluid">
+                    </div>
+                    <div class="w-50 ps-3">
+                        <h4 id="modal-post-title">Propiedades de Fondo en CSS</h4>
+                        <p id="modal-post-content">
+                        <p>En CSS, <strong>background-image</strong> permite establecer una imagen de fondo. A
+                            continuación, algunas propiedades asociadas:</p>
+                        <ul>
+                            <li><strong>background-position:</strong> Define la posición de la imagen de fondo.</li>
+                            <li><strong>background-size:</strong> Controla el tamaño de la imagen (usando valores
+                                como <code>cover</code> o <code>contain</code>).</li>
+                            <li><strong>background-attachment:</strong> Define si la imagen se desplaza con el
+                                contenido o se mantiene fija (<code>fixed</code>).</li>
+                        </ul>
+                        <p>Ejemplo:</p>
+                        <pre><code>
+.element {
+background-image: url('image.jpg');
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+}
+</code></pre>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-between w-100r">
+                    <p><strong>Fecha: </strong>10-09-2024</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="viewUserModal7" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <div class="w-50">
+                        <img src="descarga.jpeg" height="100vh" width="100%" alt=""
+                            class="img-fluid">
+                    </div>
+                    <div class="w-50 ps-3">
+                        <h4 id="modal-post-title">Objetos en CSS: Controlando Imágenes con objects</h4>
+                        <p id="modal-post-content">
+                        <p>Las propiedades CSS <code>object-fit</code>, <code>object-position</code>, y
+                            <code>object-view-port</code> nos permiten controlar cómo se visualizan las imágenes
+                            dentro de un contenedor, especialmente en la etiqueta <code>&lt;img&gt;</code>:
+                        </p>
+                        <ul>
+                            <li><strong>object-fit:</strong> Controla cómo se ajusta la imagen dentro del contenedor
+                                (ej. <code>cover</code>, <code>contain</code>).</li>
+                            <li><strong>object-position:</strong> Define la posición de la imagen dentro del
+                                contenedor.</li>
+                            <li><strong>object-view-port:</strong> Establece el área visible dentro del contenedor
+                                (específico para elementos de tipo <code>object</code>, no para imágenes). </li>
+                        </ul>
+                        <p>Ejemplo de uso:</p>
+                        <pre><code>
+img {
+    object-fit: cover;
+    object-position: center;
+}
+                        </code></pre>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-between w-100">
+                    <p class="text-start"><strong>Fecha: </strong>31-10-2024</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="viewUserModal8" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUserModalLabel">Ver Publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <div class="w-50">
+                        <img src="efectos_de_imagenes.png" height="100vh" width="100%"
+                            alt="" class="img-fluid">
+                    </div>
+                    <div class="w-50 ps-3">
+                        <h4 id="modal-post-title">Filtros CSS para Imágenes</h4>
+                        <p id="modal-post-content">
+                        <p>Los filtros en CSS permiten cambiar aspectos visuales de las imágenes como brillo,
+                            saturación y más.</p>
+                        <ul>
+                            <li><strong>brightness:</strong> Ajusta el brillo de una imagen.</li>
+                            <li><strong>saturate:</strong> Cambia la saturación de los colores.</li>
+                            <li><strong>sepia:</strong> Aplica un filtro sepia a la imagen.</li>
+                        </ul>
+                        <p>Ejemplo de uso:</p>
+                        <pre><code>
+img {
+filter: brightness(0.8);
+}
+</code></pre>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-between w-100">
+                    <p class="text-start"><strong>Fecha: </strong>18-12-2024</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="publicaciones.js"></script>
+</body>
+
+</html>
